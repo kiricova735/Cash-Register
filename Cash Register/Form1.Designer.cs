@@ -284,7 +284,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(765, 462);
+            this.ClientSize = new System.Drawing.Size(770, 462);
             this.Controls.Add(this.receiptOutput);
             this.Controls.Add(this.verticalDivider);
             this.Controls.Add(this.receiptButton);
