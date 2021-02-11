@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(backround));
             this.topTitleLabel = new System.Windows.Forms.Label();
             this.computersLabel = new System.Windows.Forms.Label();
             this.televisionsLabel = new System.Windows.Forms.Label();
@@ -51,6 +52,9 @@
             this.receiptButton = new System.Windows.Forms.Button();
             this.verticalDivider = new System.Windows.Forms.Label();
             this.receiptOutput = new System.Windows.Forms.Label();
+            this.neworderButton = new System.Windows.Forms.Button();
+            this.errorOutput = new System.Windows.Forms.Label();
+            this.changeErrorOutput = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // topTitleLabel
@@ -129,6 +133,7 @@
             this.totalButton.TabIndex = 7;
             this.totalButton.Text = "TOTAL";
             this.totalButton.UseVisualStyleBackColor = false;
+            this.totalButton.Click += new System.EventHandler(this.TotalButton_Click);
             // 
             // subtotalLabel
             // 
@@ -142,12 +147,14 @@
             // 
             // subtotalOutput
             // 
+            this.subtotalOutput.AutoSize = true;
             this.subtotalOutput.Font = new System.Drawing.Font("Nirmala UI", 12F);
             this.subtotalOutput.Location = new System.Drawing.Point(138, 209);
             this.subtotalOutput.Name = "subtotalOutput";
             this.subtotalOutput.Size = new System.Drawing.Size(58, 21);
             this.subtotalOutput.TabIndex = 9;
             this.subtotalOutput.Text = "$00.00";
+            this.subtotalOutput.Click += new System.EventHandler(this.SubtotalOutput_Click);
             // 
             // taxLabel
             // 
@@ -194,14 +201,14 @@
             this.horizontalDivider.BackColor = System.Drawing.Color.Blue;
             this.horizontalDivider.Location = new System.Drawing.Point(0, 275);
             this.horizontalDivider.Name = "horizontalDivider";
-            this.horizontalDivider.Size = new System.Drawing.Size(376, 10);
+            this.horizontalDivider.Size = new System.Drawing.Size(392, 10);
             this.horizontalDivider.TabIndex = 15;
             // 
             // tenderedLabel
             // 
             this.tenderedLabel.AutoSize = true;
             this.tenderedLabel.Font = new System.Drawing.Font("Nirmala UI", 12F);
-            this.tenderedLabel.Location = new System.Drawing.Point(88, 305);
+            this.tenderedLabel.Location = new System.Drawing.Point(88, 289);
             this.tenderedLabel.Name = "tenderedLabel";
             this.tenderedLabel.Size = new System.Drawing.Size(143, 21);
             this.tenderedLabel.TabIndex = 16;
@@ -210,9 +217,9 @@
             // 
             // tenderedText
             // 
-            this.tenderedText.Location = new System.Drawing.Point(255, 304);
+            this.tenderedText.Location = new System.Drawing.Point(294, 292);
             this.tenderedText.Name = "tenderedText";
-            this.tenderedText.Size = new System.Drawing.Size(100, 22);
+            this.tenderedText.Size = new System.Drawing.Size(61, 22);
             this.tenderedText.TabIndex = 17;
             // 
             // changeButton
@@ -222,18 +229,19 @@
             this.changeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.changeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.changeButton.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeButton.Location = new System.Drawing.Point(92, 342);
+            this.changeButton.Location = new System.Drawing.Point(92, 313);
             this.changeButton.Name = "changeButton";
             this.changeButton.Size = new System.Drawing.Size(136, 23);
             this.changeButton.TabIndex = 18;
             this.changeButton.Text = "CALCULATE CHANGE";
             this.changeButton.UseVisualStyleBackColor = false;
+            this.changeButton.Click += new System.EventHandler(this.ChangeButton_Click);
             // 
             // changeLabel
             // 
             this.changeLabel.AutoSize = true;
             this.changeLabel.Font = new System.Drawing.Font("Nirmala UI", 12F);
-            this.changeLabel.Location = new System.Drawing.Point(88, 380);
+            this.changeLabel.Location = new System.Drawing.Point(88, 339);
             this.changeLabel.Name = "changeLabel";
             this.changeLabel.Size = new System.Drawing.Size(66, 21);
             this.changeLabel.TabIndex = 19;
@@ -243,7 +251,7 @@
             // 
             this.changeOutput.AutoSize = true;
             this.changeOutput.Font = new System.Drawing.Font("Nirmala UI", 12F);
-            this.changeOutput.Location = new System.Drawing.Point(170, 380);
+            this.changeOutput.Location = new System.Drawing.Point(173, 339);
             this.changeOutput.Name = "changeOutput";
             this.changeOutput.Size = new System.Drawing.Size(58, 21);
             this.changeOutput.TabIndex = 20;
@@ -256,17 +264,18 @@
             this.receiptButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.receiptButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.receiptButton.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.receiptButton.Location = new System.Drawing.Point(92, 417);
+            this.receiptButton.Location = new System.Drawing.Point(92, 373);
             this.receiptButton.Name = "receiptButton";
             this.receiptButton.Size = new System.Drawing.Size(136, 23);
             this.receiptButton.TabIndex = 21;
             this.receiptButton.Text = "PRINT RECEIPT";
             this.receiptButton.UseVisualStyleBackColor = false;
+            this.receiptButton.Click += new System.EventHandler(this.ReceiptButton_Click);
             // 
             // verticalDivider
             // 
             this.verticalDivider.BackColor = System.Drawing.Color.Blue;
-            this.verticalDivider.Location = new System.Drawing.Point(373, 53);
+            this.verticalDivider.Location = new System.Drawing.Point(382, 53);
             this.verticalDivider.Name = "verticalDivider";
             this.verticalDivider.Size = new System.Drawing.Size(10, 414);
             this.verticalDivider.TabIndex = 22;
@@ -274,10 +283,41 @@
             // receiptOutput
             // 
             this.receiptOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.receiptOutput.Font = new System.Drawing.Font("Nirmala UI", 10F);
             this.receiptOutput.Location = new System.Drawing.Point(427, 69);
             this.receiptOutput.Name = "receiptOutput";
             this.receiptOutput.Size = new System.Drawing.Size(296, 371);
             this.receiptOutput.TabIndex = 23;
+            // 
+            // neworderButton
+            // 
+            this.neworderButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.neworderButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.neworderButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.neworderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.neworderButton.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.neworderButton.Location = new System.Drawing.Point(92, 417);
+            this.neworderButton.Name = "neworderButton";
+            this.neworderButton.Size = new System.Drawing.Size(136, 23);
+            this.neworderButton.TabIndex = 24;
+            this.neworderButton.Text = "NEW ORDER";
+            this.neworderButton.UseVisualStyleBackColor = false;
+            this.neworderButton.Click += new System.EventHandler(this.NeworderButton_Click);
+            // 
+            // errorOutput
+            // 
+            this.errorOutput.Location = new System.Drawing.Point(280, 168);
+            this.errorOutput.Name = "errorOutput";
+            this.errorOutput.Size = new System.Drawing.Size(87, 62);
+            this.errorOutput.TabIndex = 25;
+            this.errorOutput.Click += new System.EventHandler(this.ErrorOutput_Click);
+            // 
+            // changeErrorOutput
+            // 
+            this.changeErrorOutput.Location = new System.Drawing.Point(280, 318);
+            this.changeErrorOutput.Name = "changeErrorOutput";
+            this.changeErrorOutput.Size = new System.Drawing.Size(93, 78);
+            this.changeErrorOutput.TabIndex = 26;
             // 
             // backround
             // 
@@ -285,6 +325,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(770, 462);
+            this.Controls.Add(this.changeErrorOutput);
+            this.Controls.Add(this.errorOutput);
+            this.Controls.Add(this.neworderButton);
             this.Controls.Add(this.receiptOutput);
             this.Controls.Add(this.verticalDivider);
             this.Controls.Add(this.receiptButton);
@@ -309,8 +352,9 @@
             this.Controls.Add(this.computersLabel);
             this.Controls.Add(this.topTitleLabel);
             this.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "backround";
-            this.Text = "Form1";
+            this.Text = "Cash Register";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -342,6 +386,9 @@
         private System.Windows.Forms.Button receiptButton;
         private System.Windows.Forms.Label verticalDivider;
         private System.Windows.Forms.Label receiptOutput;
+        private System.Windows.Forms.Button neworderButton;
+        private System.Windows.Forms.Label errorOutput;
+        private System.Windows.Forms.Label changeErrorOutput;
     }
 }
 
