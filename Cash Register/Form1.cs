@@ -41,15 +41,7 @@ namespace Cash_Register
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void TotalButton_Click(object sender, EventArgs e)
         {
@@ -97,49 +89,47 @@ namespace Cash_Register
             receiptOutput.Text = " BestBought";
             Refresh();
             Thread.Sleep(380);
-
             receiptOutput.Text += "\n\n Order number: 735274910";
             Refresh();
             Thread.Sleep(380);
-
-            receiptOutput.Text += "\n Date of Purchase: February 11 2021";
+            receiptOutput.Text += "\n Date of Purchase: 2/11/21";
             Refresh();
             Thread.Sleep(380);
 
-            receiptOutput.Text += $"\n\n Computers   $750 x {computerNumber}";
+            receiptOutput.Text += $"\n\n Computers  $750 x {computerNumber}";
             Refresh();
             Thread.Sleep(380);
-            receiptOutput.Text += $"\n Television     $500 x {televisionNumber}";
+            receiptOutput.Text += $"\n Television $500 x {televisionNumber}";
             Refresh();
             Thread.Sleep(380);
             receiptOutput.Text += $"\n SmartPhone $635 x {smartphoneNumber}";
             Refresh();
             Thread.Sleep(380);
 
-            receiptOutput.Text += $"\n\n Subtotal: {subtotal.ToString("C")}";
+            receiptOutput.Text += $"\n\n Subtotal:  {subtotal.ToString("C")}";
             Refresh();
             Thread.Sleep(380);
-            receiptOutput.Text += $"\n Tax:         {taxAmount.ToString("C")}";
+            receiptOutput.Text += $"\n Tax:       {taxAmount.ToString("C")}";
             Refresh();
             Thread.Sleep(380);
-            receiptOutput.Text += $"\n Total:       {totalcost.ToString("C")}";
+            receiptOutput.Text += $"\n Total:     {totalcost.ToString("C")}";
             Refresh();
             Thread.Sleep(380);
-
-            receiptOutput.Text += $"\n\n Tendered: {tendered.ToString("C")}";
+            receiptOutput.Text += $"\n\n Tendered:  {tendered.ToString("C")}";
             Refresh();
             Thread.Sleep(380);
-            receiptOutput.Text += $"\n Change:   {change.ToString("C")}";
+            receiptOutput.Text += $"\n Change:    {change.ToString("C")}";
             Refresh();
             Thread.Sleep(500);
 
-            receiptOutput.Text += "\n\n\n Thank you for your purchase at BestBought, we look forward to your next visit!";
-
+            receiptOutput.Text += "\n\n\nThank you for your visiting us at BestBought, we look forward to seeing you again!";
 
         }
 
         private void NeworderButton_Click(object sender, EventArgs e)
         {   //New Order button reseting everyting below to $00.00 or nothing at all.
+            errorOutput.Text = "";
+            changeErrorOutput.Text = "";
             receiptOutput.Text = "";
             computerText.Text = "";
             tvText.Text = "";
@@ -149,16 +139,14 @@ namespace Cash_Register
             totalOutput.Text = "$00.00";
             tenderedText.Text = "";
             changeOutput.Text = "$00.00";
-        }
-
-        private void SubtotalOutput_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ErrorOutput_Click(object sender, EventArgs e)
-        {
-
-        }
+            computerNumber = 0;
+            televisionNumber = 0;
+            smartphoneNumber = 0;
+            taxAmount = 0;
+            subtotal = 0;
+            totalcost = 0;
+            change = 0;
+            tendered = 0;
+        }  
     }
 }

@@ -60,7 +60,7 @@
             // topTitleLabel
             // 
             this.topTitleLabel.BackColor = System.Drawing.Color.Blue;
-            this.topTitleLabel.Font = new System.Drawing.Font("Mixage Bk BT", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.topTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.topTitleLabel.ForeColor = System.Drawing.Color.Yellow;
             this.topTitleLabel.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.topTitleLabel.Location = new System.Drawing.Point(-1, 0);
@@ -72,30 +72,30 @@
             // computersLabel
             // 
             this.computersLabel.AutoSize = true;
-            this.computersLabel.Font = new System.Drawing.Font("Mirarae BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.computersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.computersLabel.Location = new System.Drawing.Point(3, 69);
             this.computersLabel.Name = "computersLabel";
-            this.computersLabel.Size = new System.Drawing.Size(260, 18);
+            this.computersLabel.Size = new System.Drawing.Size(249, 20);
             this.computersLabel.TabIndex = 1;
             this.computersLabel.Text = "Number of Computers Purchased:";
             // 
             // televisionsLabel
             // 
             this.televisionsLabel.AutoSize = true;
-            this.televisionsLabel.Font = new System.Drawing.Font("Mirarae BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.televisionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.televisionsLabel.Location = new System.Drawing.Point(3, 103);
             this.televisionsLabel.Name = "televisionsLabel";
-            this.televisionsLabel.Size = new System.Drawing.Size(262, 18);
+            this.televisionsLabel.Size = new System.Drawing.Size(248, 20);
             this.televisionsLabel.TabIndex = 2;
             this.televisionsLabel.Text = "Number of Televisions Purchased:";
             // 
             // phoneLabel
             // 
             this.phoneLabel.AutoSize = true;
-            this.phoneLabel.Font = new System.Drawing.Font("Mirarae BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneLabel.Location = new System.Drawing.Point(3, 138);
             this.phoneLabel.Name = "phoneLabel";
-            this.phoneLabel.Size = new System.Drawing.Size(278, 18);
+            this.phoneLabel.Size = new System.Drawing.Size(268, 20);
             this.phoneLabel.TabIndex = 3;
             this.phoneLabel.Text = "Number of SmartPhones Purchased:";
             // 
@@ -138,10 +138,10 @@
             // subtotalLabel
             // 
             this.subtotalLabel.AutoSize = true;
-            this.subtotalLabel.Font = new System.Drawing.Font("Mirarae BT", 12F);
+            this.subtotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.subtotalLabel.Location = new System.Drawing.Point(34, 212);
             this.subtotalLabel.Name = "subtotalLabel";
-            this.subtotalLabel.Size = new System.Drawing.Size(85, 18);
+            this.subtotalLabel.Size = new System.Drawing.Size(81, 20);
             this.subtotalLabel.TabIndex = 8;
             this.subtotalLabel.Text = "Sub Total:";
             // 
@@ -154,15 +154,14 @@
             this.subtotalOutput.Size = new System.Drawing.Size(58, 21);
             this.subtotalOutput.TabIndex = 9;
             this.subtotalOutput.Text = "$00.00";
-            this.subtotalOutput.Click += new System.EventHandler(this.SubtotalOutput_Click);
             // 
             // taxLabel
             // 
             this.taxLabel.AutoSize = true;
-            this.taxLabel.Font = new System.Drawing.Font("Mirarae BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taxLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.taxLabel.Location = new System.Drawing.Point(79, 233);
             this.taxLabel.Name = "taxLabel";
-            this.taxLabel.Size = new System.Drawing.Size(40, 18);
+            this.taxLabel.Size = new System.Drawing.Size(38, 20);
             this.taxLabel.TabIndex = 10;
             this.taxLabel.Text = "Tax:";
             // 
@@ -179,10 +178,10 @@
             // totalLabel
             // 
             this.totalLabel.AutoSize = true;
-            this.totalLabel.Font = new System.Drawing.Font("Mirarae BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalLabel.Location = new System.Drawing.Point(67, 254);
             this.totalLabel.Name = "totalLabel";
-            this.totalLabel.Size = new System.Drawing.Size(52, 18);
+            this.totalLabel.Size = new System.Drawing.Size(48, 20);
             this.totalLabel.TabIndex = 13;
             this.totalLabel.Text = "Total:";
             // 
@@ -213,7 +212,6 @@
             this.tenderedLabel.Size = new System.Drawing.Size(143, 21);
             this.tenderedLabel.TabIndex = 16;
             this.tenderedLabel.Text = "Currency Tendered:";
-            this.tenderedLabel.Click += new System.EventHandler(this.Label1_Click);
             // 
             // tenderedText
             // 
@@ -283,7 +281,7 @@
             // receiptOutput
             // 
             this.receiptOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.receiptOutput.Font = new System.Drawing.Font("Nirmala UI", 10F);
+            this.receiptOutput.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.receiptOutput.Location = new System.Drawing.Point(427, 69);
             this.receiptOutput.Name = "receiptOutput";
             this.receiptOutput.Size = new System.Drawing.Size(296, 371);
@@ -310,7 +308,6 @@
             this.errorOutput.Name = "errorOutput";
             this.errorOutput.Size = new System.Drawing.Size(87, 62);
             this.errorOutput.TabIndex = 25;
-            this.errorOutput.Click += new System.EventHandler(this.ErrorOutput_Click);
             // 
             // changeErrorOutput
             // 
@@ -355,7 +352,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "backround";
             this.Text = "Cash Register";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
